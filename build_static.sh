@@ -10,6 +10,7 @@ apt-get install -yq libsystemd-dev
 cd /postfix_exporter
 
 go get -d ./...
-go build -a -tags static_all -buildvcs=false
+git config --global --add safe.directory /postfix_exporter
+go build -a -tags static_all
 strip postfix_exporter
 EOF
